@@ -2,6 +2,7 @@ package org.example.digital_banking.entities;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.example.digital_banking.enums.Operation_type;
@@ -10,6 +11,7 @@ import java.util.Date;
 
 @Entity
 @Data
+@Builder
 @AllArgsConstructor @NoArgsConstructor
 public class Operation {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
