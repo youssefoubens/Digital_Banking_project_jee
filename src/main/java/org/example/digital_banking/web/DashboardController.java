@@ -16,7 +16,7 @@ public class DashboardController {
     private final DashboardService dashboardService;
 
     @GetMapping("/summary")
-    public org.example.digital_banking.dto.DashboardStatsDTO getSummary() {
+    public org.example.digital_banking.dtos.DashboardStatsDTO getSummary() {
         return dashboardService.getDashboardStats();
     }
 

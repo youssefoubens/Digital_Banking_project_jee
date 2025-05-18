@@ -1,4 +1,4 @@
-package org.example.digital_banking.dto;
+package org.example.digital_banking.dtos;
 
 import lombok.Builder;
 import lombok.Data;

@@ -19,14 +19,14 @@ public class DashboardServiceImpl implements DashboardService {
 
 
     @Override
-    public org.example.digital_banking.dto.DashboardStatsDTO getDashboardStats() {
+    public org.example.digital_banking.dtos.DashboardStatsDTO getDashboardStats() {
         double totalBalance = bankAccountRepo.sumAllBalances();
         long activeAccounts = bankAccountRepo.countByStatus(AccountStatus.ACTIVE);
         long newAccounts = bankAccountRepo.countByCreatedAtAfter(new Date(System.currentTimeMillis() - 7L * 24 * 60 * 60 * 1000));
         long recentTransactions =  countRecentTransactions(7); // last 7 days
         long pendingTransactions = operationRepo.countByDescriptionContainingIgnoreCase("pending");
 
-        return org.example.digital_banking.dto.DashboardStatsDTO.builder()
+        return org.example.digital_banking.dtos.DashboardStatsDTO.builder()
                 .totalBalance(totalBalance)
                 .balanceChange(0) // Placeholder, compute net change if needed
                 .activeAccounts(activeAccounts)
